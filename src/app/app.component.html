@@ -1,20 +1,57 @@
 <header>
-  <p> {{this.nombre}} </p>
+  <h1> {{this.nombre}} </h1>
+  <h2> {{this.puesto}} </h2>
 </header>
 
 <div class="main">
     <aside>
+      <h4>CONTACTO</h4>
       <p>{{this.ciudad}}</p>
       <p>{{this.numero}}</p>
       <p>{{this.email}}</p>
-      <a href="https://github.com/SantiagoLuqueVillanueva">Github</a>
-      <p>{{this.idioma}}</p>
+      <a href="https://github.com/SantiagoLuqueVillanueva">{{this.gitHub}}</a>
+      <br>
+      <h4>IDIOMAS</h4>
+      @for (idioma of idiomas; track idioma) {
+        <p>{{idioma}}</p>
+      }
     </aside>
     <main>
-      <p>Main</p>
+      <section>
+        <h4>SOBRE MÍ</h4>
+        <img ngSrc="perfil.jpg" width="150" height="150" alt="Foto de perfil">
+        <p>{{this.sobreMi}}</p>
+      </section>
+      <section>
+        <h4>EXPERIENCIA</h4>
+        @for(exp of experiencias; track exp.empresa){
+          <div class="margen-bucle">
+            <h5>{{exp.empresa}} | {{exp.periodo}}</h5>
+            <p><strong>{{exp.puesto}}</strong></p>
+            <p>{{exp.descripcion}}</p>
+            <br>
+          </div>
+        }
+      </section>
+      <section>
+        <h4>Formación</h4>
+        @for(estudio of formacion; track estudio.titulo){
+          <div class="margen-bucle">
+            <h5>{{estudio.titulo}}</h5>
+            <p>{{estudio.centro}} ({{estudio.periodo}})</p>
+            <br>
+          </div>
+        }
+      </section>
+      <section>
+        <h4>TECNOLOGÍAS</h4>
+        @for(tec of tecnologias; track tec){
+          <span>{{tec}}</span>
+        }
+      </section>
     </main>
 </div>
 
 <footer id="footer">
-  {{this.fecha | date: 'dd/MM/yyyy'}}
+  <p>Currículum desarrollado con Angular - {{this.fecha | date: 'dd/MM/yyyy'}}</p>
   </footer>
