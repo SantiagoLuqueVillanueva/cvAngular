@@ -1,0 +1,32 @@
+<section>
+        <h4>SOBRE MÍ</h4>
+        <img ngSrc="perfil.jpg" width="150" height="150" alt="Foto de perfil">
+        <p>{{this.sobreMi}}</p>
+      </section>
+      <section>
+        <h4>EXPERIENCIA</h4>
+        @for(exp of experiencias; track exp.empresa){
+          <div class="margen-bucle">
+            <h5>{{exp.empresa}} | {{exp.periodo}}</h5>
+            <p><strong>{{exp.puesto}}</strong></p>
+            <p>{{exp.descripcion}}</p>
+            <br>
+          </div>
+        }
+      </section>
+      <section>
+        <h4>Formación</h4>
+        @for(estudio of formacion; track estudio.titulo){
+          <div class="margen-bucle">
+            <h5>{{estudio.titulo}}</h5>
+            <p>{{estudio.centro}} ({{estudio.periodo}})</p>
+            <br>
+          </div>
+        }
+      </section>
+      <section>
+        <h4>TECNOLOGÍAS</h4>
+        @for(tec of tecnologias; track tec){
+          <span>{{tec}}</span>
+        }
+      </section>

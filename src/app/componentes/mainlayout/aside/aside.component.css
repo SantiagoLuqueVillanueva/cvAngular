@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  background-color: #f4f6f7;
+  padding: 20px;
+  border-right: 2px solid #ddd;
+}
+
+h4 {
+  color: #2c3e50;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
